@@ -1,6 +1,7 @@
 # UE.JsonAssist
 JsonAssist Plugin Documentation
   
+// Can access members at multiple levels  
 Example:  
 
 	// FJson Json = FJson(JsonType.Object);  

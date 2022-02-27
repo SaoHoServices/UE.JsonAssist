@@ -36,3 +36,31 @@ Example:
 	UJsonAssist::FileWrite(JsonFile, Full);  
   
 	FJson Temp = UJsonAssist::Get().Parse(UJsonAssist::FileRead(JsonFile));  
+	  
+	FString Name = Temp["Name"].Get();  
+	Name = Temp["Name"];  
+	  
+	int32 tempint = Temp["Int"].GetInteger();  
+	float tempfloat = Temp["Float"].GetFloat();  
+	TArray<FString> Fields = Temp.GetFields();  
+	  
+	Temp.Remove([](const FJson &Entry)  
+	{  
+		return Entry.FieldName == "Name";  
+	});  
+	  
+	Temp.RemoveAll([](const FJson &Entry)  
+	{  
+		return Entry.FieldName.Contains("i");  
+	});  
+	  
+	FJson Result;  
+	Temp.Find([](const FJson &Entry)  
+	{  
+		return Entry.FieldName == "Name";  
+	}, Result);  
+	  
+	Result = Temp.Find([](const FJson &Entry)  
+	{  
+		return Entry.FieldName == "Name";  
+	});  

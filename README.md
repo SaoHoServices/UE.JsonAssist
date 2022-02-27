@@ -1,7 +1,8 @@
 # UE.JsonAssist
 JsonAssist Plugin Documentation
   
-  // FJson Json = FJson(JsonType.Object);  
+Example:
+	// FJson Json = FJson(JsonType.Object);  
 	FJson Json = JsonObject();  
   
 	Json["Name"] = "MoonStudio";  
@@ -23,8 +24,8 @@ JsonAssist Plugin Documentation
 	Json["Members"][0] = "SaoHo";  
 	Json["Members"][1] = "Erie";  
     
-  Json["Object"]["Name"] = "Object";  
-  Json["Array"][0] = "Array";  
+	Json["Object"]["Name"] = "Object";  
+	Json["Array"][0] = "Array";  
   
 	FString Fast = UJsonAssist::Get().FastPrint(Json);  
 	FString Full = UJsonAssist::Get().Print(Json);  
